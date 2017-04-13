@@ -1,0 +1,25 @@
+<html>
+<head>
+<script src="../js/jquery" type="javascript"></script>
+<script>
+var draw = SVG('drawing').size(300, 300);
+var rect = draw.rect(50, 50).attr({ fill: '#a3c' });
+
+function animLoop(obj){
+    obj.rotate(0).move(10,10)
+    .animate(500, ">").rotate(50)
+    .animate(200, "<").rotate(45)
+    .animate(200, "<").move(10,15)
+    .after(function(s){
+        animLoop(this);
+    });
+}
+</script>
+</head>
+
+<body>
+<h2></h2>
+</body>
+
+
+</html>
